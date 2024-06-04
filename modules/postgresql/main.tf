@@ -71,6 +71,7 @@ resource "google_sql_database_instance" "default" {
     availability_type           = var.availability_type
     deletion_protection_enabled = var.deletion_protection_enabled
     connector_enforcement       = local.connector_enforcement
+    enable_google_ml_integration = var.enable_google_ml_integration
 
     dynamic "backup_configuration" {
       for_each = local.is_secondary_instance ? [] : [var.backup_configuration]
@@ -321,4 +322,11 @@ resource "null_resource" "module_depends_on" {
   triggers = {
     value = length(var.module_depends_on)
   }
+}
+
+resource "google_project_iam_member" "database_integration" {
+  for_each = var.database_integration_roles
+  project = module.project-services.project_id
+  role    = each.value
+  member  = "serviceAccount:${google_sql_database_instance.default.service_account_email_address}"
 }
