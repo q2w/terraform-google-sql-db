@@ -325,8 +325,8 @@ resource "null_resource" "module_depends_on" {
 }
 
 resource "google_project_iam_member" "database_integration" {
-  for_each = var.database_integration_roles
-  project = module.project-services.project_id
+  for_each = toset(var.database_integration_roles)
+  project = var.project_id
   role    = each.value
   member  = "serviceAccount:${google_sql_database_instance.default.service_account_email_address}"
 }
