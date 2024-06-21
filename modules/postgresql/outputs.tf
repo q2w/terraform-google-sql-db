@@ -149,6 +149,6 @@ output "env_vars" {
   value = { 
     "CLOUD_SQL_DATABASE_HOST": google_sql_database_instance.default.first_ip_address, 
     "CLOUD_SQL_DATABASE_CONNECTION_NAME": google_sql_database_instance.default.connection_name,
-    "CLOUD_SQL_DATABASE_NAME": google_sql_database.default.name
+    "CLOUD_SQL_DATABASE_NAME": local.database_name
   }
 }
