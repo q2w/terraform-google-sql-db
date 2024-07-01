@@ -188,6 +188,12 @@ spec:
           email = string
         }))
     default: []
+    connections:
+    - source:
+        source: https://github.com/q2w/terraform-google-service-accounts//modules/simple-sa
+        version: v1.0.0
+      spec:
+        output_expr: id
   - name: insights_config
     description: The insights_config settings for the database.
     type: |-
@@ -215,6 +221,13 @@ spec:
       ipv4_enabled: true
       private_network: null
       require_ssl: null
+    connections:
+    - source:
+        source: https://github.com/terraform-google-modules/terraform-google-network//modules/vpc
+        version: v9.1.0
+      spec:
+        output_expr: network_id
+        input_path: private_network  
   - name: maintenance_window_day
     description: The day of week (1-7) for the master instance maintenance.
     type: number
