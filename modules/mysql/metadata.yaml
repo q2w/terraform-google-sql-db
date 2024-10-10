@@ -22,7 +22,7 @@ spec:
   info:
     title: terraform-google-sql for MySQL
     source:
-      repo: https://github.com/terraform-google-modules/terraform-google-sql-db.git
+      repo: https://github.com/q2w/terraform-google-sql-db.git
       sourceType: git
       dir: /modules/mysql
     version: 23.0.0
@@ -340,10 +340,12 @@ spec:
           - source:
               source: github.com/terraform-google-modules/terraform-google-service-accounts//modules/simple-sa
               version: ~> 4.4
+              version: ~> 4.4
             spec:
               outputExpr: account_details
+              outputExpr: account_details
           - source:
-              source: github.com/GoogleCloudPlatform/terraform-google-cloud-run//modules/v2
+              source: github.com/q2w/terraform-google-cloud-run//modules/v2
               version: ~> 0.13
             spec:
               outputExpr: service_account_id

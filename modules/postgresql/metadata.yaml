@@ -22,7 +22,7 @@ spec:
   info:
     title: terraform-google-sql for PostgreSQL
     source:
-      repo: https://github.com/terraform-google-modules/terraform-google-sql-db.git
+      repo: https://github.com/q2w/terraform-google-sql-db.git
       sourceType: git
       dir: /modules/postgresql
     version: 23.0.0
@@ -323,7 +323,7 @@ spec:
             spec:
               outputExpr: account_details
           - source:
-              source: github.com/GoogleCloudPlatform/terraform-google-cloud-run//modules/v2
+              source: github.com/q2w/terraform-google-cloud-run//modules/v2
               version: ~> 0.13
             spec:
               outputExpr: service_account_id
