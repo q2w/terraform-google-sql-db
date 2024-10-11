@@ -22,7 +22,7 @@ spec:
   info:
     title: terraform-google-sql for PostgreSQL
     source:
-      repo: https://github.com/terraform-google-modules/terraform-google-sql-db.git
+      repo: https://github.com/q2w/terraform-google-sql-db.git
       sourceType: git
       dir: /modules/postgresql
     version: 22.1.0
@@ -222,7 +222,7 @@ spec:
         defaultValue: {}
         connections:
           - source:
-              source: github.com/terraform-google-modules/terraform-google-network//modules/vpc
+              source: github.com/q2w/terraform-google-network//modules/vpc
               version: ">= 9.1.0"
             spec:
               outputExpr: network_id
@@ -318,12 +318,12 @@ spec:
         defaultValue: []
         connections:
           - source:
-              source: github.com/terraform-google-modules/terraform-google-service-accounts//modules/simple-sa
+              source: github.com/q2w/terraform-google-service-accounts//modules/simple-sa
               version: ">= 4.3.0"
             spec:
               outputExpr: id
           - source:
-              source: github.com/GoogleCloudPlatform/terraform-google-cloud-run//modules/v2
+              source: github.com/q2w/terraform-google-cloud-run//modules/v2
               version: ">= 0.13.0"
             spec:
               outputExpr: service_account_id
